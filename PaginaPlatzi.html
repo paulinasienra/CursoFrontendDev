@@ -5,11 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Mulish&display=swap" rel="stylesheet">
     <title>Header</title>
 </head>
 <style>
+    * {
+        margin: 0px;
+    }
     body {
         margin: 0px;
         background-color: #AB88FF;
@@ -21,40 +24,37 @@
         height: 80px;
         display: flex;
         justify-content: space-between; /*espacio en medio entre el logo y el usuario*/
-        border: 2px solid black;
+        box-sizing:border-box; /*Permite que el padding y el margin se ajusten al tamanio total del contenedor*/
     }
     .header__img {
         width: 200px;
-        margin-top: 10px;
-        margin-left: 10px;
+        box-sizing: border-box;
+        padding: 12px;
     }
-    .header__menu {
-        margin-right: 60px;
-    }
-    .header__menu ul {
+    .header__menu--lista {
         display: none;
-        list-style: none; /*sacamos los puntitos del defecto*/
-        padding: 0px; /*sacamos el padding del defecto*/
-        position: absolute; /*asi lo colocamos como querramos con respecto al padre*/
-        width: 100px;
-        text-align: right; /*alineacion del texto como en un programa de escribir*/
-        margin: 0px 0px 0px -14px; /*posicionamos el elemento segun en como va a estar 
-        relativo a tu padre entonces es -14 a la izq*/
+        list-style: none;
+        text-align: right;
     }
-    .header__menu:hover ul, ul:hover {
+    .header__menu--lista li {
+        padding: 10px 20px;
+    }
+    .header__menu--lista li a{
+        text-decoration: none;
+        color:white;
+    }
+    .header__menu--lista li a:hover {
+        text-decoration: underline;
+    }
+    .header__menu:hover ul, .header__menu--lista:hover {
         display: block;
     }
-    .header__menu li {
-        margin: 10px 0px;
-    }
-    .header__menu li a{
-        color:white;
-        text-decoration: none;
-    }
     .header__menu--profile {
-        margin-right: 8px; /*espaciado entre la imagen y el texto*/
-        width: 50px;
+        height: 100%;
         display: flex;
+        padding: 20px;
+        box-sizing:border-box;
+        justify-content: flex-end;
         align-items: center;
     }
 </style>
@@ -63,10 +63,10 @@
         <img class="header__img" src="img/logo-platzi-video-BW2.png" alt="">
         <div class="header__menu">
             <div class="header__menu--profile">
-                <img src="img/icons8-usuario-masculino-en-círculo-24.png" alt="User">
-                <p>Perfil</p>
+                <img src="img/icons8-usuario-masculino-en-círculo-50.png" alt="User">
+                <p style="color:white; margin-left: 4px;">Perfil</p>
             </div>
-            <ul>
+            <ul class="header__menu--lista">
                 <li><a href="/">Cuenta</a></li>
                 <li><a href="/">Cerrar Sesion</a></li>
             </ul>
