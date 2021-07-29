@@ -6,7 +6,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    body {
+        margin: 0px;
+    }
+    .carousel {
+        width: 100%;
+        overflow: scroll;
+        padding: 30px;
+        position: relative;
+    }
+    .carousel__container {
+        white-space: nowrap;/*todos en la misma linea envolvente*/
+        margin: 70px 0px;
+        padding-bottom: 10px;
+    }
+    .carousel__item {
+        background-color: teal;
+        width: 200px;
+        height: 250px;
+        border-radius: 20px;
+        overflow: hidden;
+        margin-right: 10px;
+        display: inline-block; /*uno al lado del otro*/
+        cursor: pointer; /*sirve para darle a entender al usuario que puede hacer algo distinto*/
+        transition: 450ms; /*la transicion con el hover tiene ese tiempo*/
+        transform-origin: center left;/*la transformacion con el hocer es del centro a izquieda*/
+    }
+    .carousel__item:hover ~ .carousel__item {
+        transform: translate3d(100px, 0, 0); /*los elementos de corren 100px a la izquierda*/
+    }
+    .carousel__container:hover .carousel__item {
+        opacity: 0.3; /*la opacidad de los no seleccionados se opaca*/
+    }
+    .carousel__container:hover .carousel__item:hover { /*el elemento seleccionado hace:*/
+        transform: scale(1.5); /*escala del tamanio inicial a 1.5*/
+        opacity: 1; /*la opacidad del seleccionado queda igual*/
+    }
+</style>
 <body>
-    
+    <section class="carousel">
+        <div class="carousel__container">
+            <div class="carousel__item">
+            </div>
+            <div class="carousel__item">
+            </div>
+            <div class="carousel__item">
+            </div>
+            <div class="carousel__item">
+            </div>
+        </div>
+    </section>
 </body>
 </html>
