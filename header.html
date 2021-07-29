@@ -4,27 +4,72 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200&display=swap" rel="stylesheet">
     <title>Header</title>
 </head>
 <style>
     body {
         margin: 0px;
+        background-color: #AB88FF;
+        font-family: 'Mulish', sans-serif;
     } 
-    header {
-        background-color: #FF9A8B;
-        background-image: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
+    .header {
+        background-color: #AB88FF;
         width: 100%;
         height: 80px;
+        display: flex;
+        justify-content: space-between; /*espacio en medio entre el logo y el usuario*/
     }
-    header img {
+    .header__img {
         width: 200px;
         margin-top: 10px;
         margin-left: 10px;
     }
+    .header__menu {
+        margin-right: 60px;
+    }
+    .header__menu ul {
+        display: none;
+        list-style: none; /*sacamos los puntitos del defecto*/
+        padding: 0px; /*sacamos el padding del defecto*/
+        position: absolute; /*asi lo colocamos como querramos con respecto al padre*/
+        width: 100px;
+        text-align: right; /*alineacion del texto como en un programa de escribir*/
+        margin: 0px 0px 0px -14px; /*posicionamos el elemento segun en como va a estar 
+        relativo a tu padre entonces es -14 a la izq*/
+    }
+    .header__menu:hover ul, ul:hover {
+        display: block;
+    }
+    .header__menu li {
+        margin: 10px 0px;
+    }
+    .header__menu li a{
+        color:white;
+        text-decoration: none;
+    }
+    .header__menu--profile {
+        margin-right: 8px; /*espaciado entre la imagen y el texto*/
+        width: 50px;
+        display: flex;
+        align-items: center;
+    }
 </style>
 <body>
-    <header>
-        <img src="img/logo-platzi-video-BW2.png" alt="">
+    <header class="header">
+        <img class="header__img" src="img/logo-platzi-video-BW2.png" alt="">
+        <div class="header__menu">
+            <div class="header__menu--profile">
+                <img src="img/icons8-usuario-masculino-en-círculo-24.png" alt="User">
+                <p>Perfil</p>
+            </div>
+            <ul>
+                <li><a href="/">Cuenta</a></li>
+                <li><a href="/">Cerrar Sesion</a></li>
+            </ul>
+        </div>
     </header>
 </body>
 </html>
