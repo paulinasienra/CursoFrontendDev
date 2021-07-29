@@ -15,11 +15,11 @@
     }
     body {
         margin: 0px;
-        background-color: #AB88FF;
+        background-color: #8F57FD;
         font-family: 'Mulish', sans-serif;
     } 
     .header {
-        background-color: #AB88FF;
+        background-color: #8F57FD;
         width: 100%;
         height: 80px;
         display: flex;
@@ -49,6 +49,9 @@
     .header__menu:hover ul, .header__menu--lista:hover {
         display: block;
     }
+    .header__menu--imagen {
+        height:inherit;
+    }
     .header__menu--profile {
         height: 100%;
         display: flex;
@@ -57,13 +60,35 @@
         justify-content: flex-end;
         align-items: center;
     }
+
+    .main {
+        height: 300px;
+    }
+    .main__title {
+        color: white;
+        font-size: 25px;
+    }
+    .input {
+        background-color: rgba(255,255,255,0.1);
+        border: 2px solid white;
+        border-radius: 25px;
+        color:white;
+        font-family: 'Mulish', sans-serif;
+        font-size: 16px;
+        height: 50px;
+        padding: 0px 20px;
+        width: 70%;
+        margin: 5px;
+    }
+    ::placeholder {
+        color: white; /*hace blanco el texto de adentro del titulo*/
 </style>
 <body>
     <header class="header">
         <img class="header__img" src="img/logo-platzi-video-BW2.png" alt="">
         <div class="header__menu">
             <div class="header__menu--profile">
-                <img src="img/icons8-usuario-masculino-en-círculo-50.png" alt="User">
+                <img class="header__menu--imagen" src="img/icons8-usuario-masculino-en-círculo-50.png" alt="User">
                 <p style="color:white; margin-left: 4px;">Perfil</p>
             </div>
             <ul class="header__menu--lista">
@@ -72,5 +97,9 @@
             </ul>
         </div>
     </header>
+    <section class="main">
+        <h2 class="main__title" style="margin: 10px 5px;">Que quieres ver hoy?</h2>
+        <input class="input" type="text" placeholder="Buscar...">
+    </section>
 </body>
 </html>
