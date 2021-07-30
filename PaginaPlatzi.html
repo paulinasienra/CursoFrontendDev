@@ -62,7 +62,11 @@
     }
 
     .main {
-        height: 300px;
+        height: 250px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
     .main__title {
         color: white;
@@ -71,7 +75,7 @@
     .input {
         background-color: rgba(255,255,255,0.1);
         border: 2px solid white;
-        border-radius: 25px;
+        border-radius: 35px;
         color:white;
         font-family: 'Mulish', sans-serif;
         font-size: 16px;
@@ -79,6 +83,7 @@
         padding: 0px 20px;
         width: 70%;
         margin: 5px;
+        outline: none;
     }
     ::placeholder {
         color: white; /*hace blanco el texto de adentro del titulo*/
