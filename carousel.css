@@ -1,0 +1,68 @@
+.carousel {
+    width: 100%;
+    overflow: scroll;
+    position: relative;
+}
+.carousel__container {
+    white-space: nowrap;/*todos en la misma linea envolvente*/
+    margin: 70px 10px;
+    padding-bottom: 10px;
+}
+.carousel-item {
+    background-color: teal;
+    width: 200px;
+    height: 250px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-right: 10px;
+    display: inline-block; /*uno al lado del otro*/
+    cursor: pointer; /*sirve para darle a entender al usuario que puede hacer algo distinto*/
+    transition: 450ms all; /*la transicion con el hover tiene ese tiempo*/
+    transform-origin: center left;/*la transformacion con el hocer es del centro a izquieda*/
+    position: relative;
+}
+.carousel-item:hover ~ .carousel-item {
+    transform: translate3d(100px, 0, 0); /*los elementos de corren 100px a la izquierda*/
+}
+.carousel__container:hover .carousel-item {
+    opacity: 0.3; /*la opacidad de los no seleccionados se opaca*/
+}
+.carousel__container:hover .carousel-item:hover { /*el elemento seleccionado hace:*/
+    transform: scale(1.5); /*escala del tamanio inicial a 1.5*/
+    opacity: 1; /*la opacidad del seleccionado queda igual*/
+}
+.carousel-item__img {
+    width: 200px;
+    height: 250px;
+    object-fit: cover;/*hace que la imagen se ajuste al tamanio que le pusimos dentro del container*/
+}
+.carousel-item__details {
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%,rgba(0,0,0,0) 100%); /*gradiente de la imagen*/
+    font-size: 10px;
+    opacity: 0; /*hace que al no estar ocando un item, todo esto este oculto*/
+    transition: 450ms opacity; /*hace que ese tiempo se aplique a la transicion de la opacidad de las cosas*/
+    padding: 10px;
+    position: absolute; /*con left top y eso le damos el lugar donde lo queremos respectivamente del contenedor*/
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content:flex-end;
+    color: white;
+}
+.carousel__container:hover .carousel-item__details:hover {
+    opacity: 1; /*hace que cuando tocamos un item, los detalles se hacen visibles y el gradiente tambien*/
+}
+.carousel-item__details--title {
+    margin-top: 2px;
+    margin-bottom: 1px;
+    font-size: 12px;
+}
+.carousel-item__details--subtitle {
+    margin-bottom: 4px;
+    margin-top: 0px;
+    font-size: 8px;
+}
