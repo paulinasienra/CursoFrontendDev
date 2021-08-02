@@ -1,0 +1,51 @@
+body {
+    margin: 0px;
+    width: 100%;
+    position: absolute;/*absoluto respecto al padre y las posiciones top botom del mismo*/
+    top: 0;
+    bottom: 0;
+  }
+.wrap {
+    width:100%;/*si ponemos height 100% hace que tome todo el tamanio del body y lo hace mas grande para abajo con scroll no sirve*/
+    position: absolute;
+    top: 80px;
+    bottom: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(#21C088,#8F57FD);
+  }
+.box {
+    height: 100%;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+.text {
+    color: #fff;
+    font-size: 1.0em;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+.animated {
+    animation-duration: 2.5s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+  }
+@keyframes pulse {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.1);}
+    100% {transform: scale(1);}
+  }
+.pulse {
+    animation-name: pulse;
+    animation-duration: 1s;
+}
+.box a {
+    color: white;
+    font-size: 12px;
+}
