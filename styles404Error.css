@@ -26,24 +26,24 @@ body {
   }
 .text {
     color: #fff;
-    font-size: 1.0em;
+    font-size: 24px;
     font-family: sans-serif;
     text-transform: uppercase;
     margin-bottom: 10px;
   }
 .animated {
-    animation-duration: 2.5s;
+    animation-duration: 5.0s;
     animation-fill-mode: both;
     animation-iteration-count: infinite;
   }
 @keyframes pulse {
     0% {transform: scale(1);}
-    50% {transform: scale(1.1);}
-    100% {transform: scale(1);}
+    25% {transform: scale(1.4);}
+    50% {transform: scale(1);}/*Controla lo que hace en cada porcentaje del tiempo de ejecucion de la animacion*/
   }
 .pulse {
     animation-name: pulse;
-    animation-duration: 1s;
+    animation-duration: 2.5s;
 }
 .box a {
     color: white;
